@@ -50,11 +50,22 @@ def search_cave():
 def closest(myX,myY,myESPG):
     return name
 
-def add_caves(name,X,Y,ESPG):
-    return
+def row_caves(act=1,*var):
+    act=str(act)
+    if act=='1':
+        print('This function is made to add, update or remove a cave in the database \n the function work as row_caves(act,values) \n the argument act can be "add", "update" or "remove" \n add: values is all the values for each columns \n remove: "indexvalue" is the index of the rows \n update: "columnname" is  name of the column "values" is the values to add "indexvalue" is the index of the rows ')
+    if act=='add':
+        values=var
+        c.execute('INSERT INTO cave('+ str(colname) +' ) VALUES( ' + str(values) + ')')
+    if act=='remove':
+        indexvalue=var
+        c.execute('DELETE FROM cave WHERE index =' + str(indexvalue) )
+    if act=='update':
+        columnname=var[0]
+        values=var[1]
+        indexvalue=var[2]
+        c.execute('UPDATE cave SET' + str(columnname) + '=' + str(values) + 'WHERE index='+ str(indexvalue))
 
-def modify_caves(name):
-    return
 
 def search():
     return output
