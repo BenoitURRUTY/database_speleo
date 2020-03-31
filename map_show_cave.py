@@ -1,4 +1,3 @@
-#+begin_src python :results output :session :exports both
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -49,7 +48,7 @@ def get_frame(url,width,height): #https://stackoverflow.com/questions/29535715/p
     popup = folium.Popup(iframe,max_width=width)
     return popup
 
-url='/home/urrutyb/Téléchargements/database_speleo_gucem_local (version 1) .csv'
+url='./database_speleo_gucem.csv'
 
 data=pd.read_csv(url,sep=';')
 FILE_HEADER = ['Nom','Nom_bis','Massif','WGS84','X','Y','Alt','denivele','developpement','Equipement','Temps_approx','debutant','crue','balade']
@@ -90,15 +89,4 @@ w.show()
 
 #sys.exit(app.exec_()) #quitte python quand on ferme la fenetre
 
-#+end_src
-
-#+RESULTS:
-: Python 3.7.3 (default, Apr  3 2019, 05:39:12) 
-: [GCC 8.3.0] on linux
-: Type "help", "copyright", "credits" or "license" for more information.
-: Traceback (most recent call last):
-:   File "<stdin>", line 1, in <module>
-:   File "/tmp/babel-3derzx/python-bJas4E", line 1, in <module>
-:     import geopandas as gpd
-: ModuleNotFoundError: No module named 'geopandas'
 
